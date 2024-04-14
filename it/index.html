@@ -22,10 +22,22 @@
 
 
 
-<!-- Event snippet for VISITOU PRENATALIN IT (1) conversion page -->
+<!-- Event snippet for VISITOU PRENATALIN IT (1) conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
 <script>
-  gtag('event', 'conversion', {'send_to': 'AW-11446860108/u4igCKWOwqYZEMzypNIq'});
-</script>
+	function gtag_report_conversion(url) {
+	  var callback = function () {
+		if (typeof(url) != 'undefined') {
+		  window.location = url;
+		}
+	  };
+	  gtag('event', 'conversion', {
+		  'send_to': 'AW-11446860108/u4igCKWOwqYZEMzypNIq',
+		  'event_callback': callback
+	  });
+	  return false;
+	}
+	</script>
 
 
 	
